@@ -4,7 +4,7 @@ import { Link, redirect, useNavigate } from 'react-router-dom';
 
 import { recievedCodeSchema } from '../signup.schema'; // it was exported as object.
 
-function Confirmation () {
+function CreateProfile () {
     // const shouldRedirect = true;
 
     // const navigate = useNavigate();
@@ -95,4 +95,4 @@ function Confirmation () {
     )
 }
 
-export default Confirmation;
+export default CreateProfile;

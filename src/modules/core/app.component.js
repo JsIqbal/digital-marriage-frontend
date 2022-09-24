@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route  } from 'react-router-dom';
 
-import { Signup, MoblieRegistration, Confirmation } from "../signup";
+import { Signup, MoblieRegistration, Confirmation, CreateProfile, SignUpClientRoutes } from "../signup";
 
 function App() {
     return (
@@ -13,6 +13,8 @@ function App() {
                 <Route path="/user/mobile/registration" element={<MoblieRegistration />} />
 
                 <Route path="/user/mobile/registration/welcome" element={<Confirmation />} />
+
+                <Route path="/user/mobile/registration/welcome/profile" element={<CreateProfile />} />
             </Routes>
          </div>
       </div>
