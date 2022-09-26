@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link, redirect, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { recievedCodeSchema } from '../signup.schema'; // it was exported as object.
 
 function Confirmation () {
-    // const shouldRedirect = true;
+    const [shouldRedirect, setShouldRedirect] = useState(false);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
   
-    // useEffect(() => {
-    //   if (shouldRedirect) {
-    //     navigate('/home');
-    //   }
-    // });
+    useEffect(() => {
+        if (shouldRedirect) {
+            navigate('/user/mobile/registration/welcome/profile');
+        }
+    });
 
     return (
         <div className='row mt-4'>
@@ -21,7 +21,7 @@ function Confirmation () {
                 <div className='registration-header'>
                     <div className='row'>
                         <div className='col-lg-6'>
-                            <label htmlFor='mobile'>
+                            <label htmlFor='fieldOne'>
                                 <h1>স্বাগতম</h1>
                                 <p>+৮৮০১-৪০৩২২৯৪৭৯ নম্বরে পাঠানো কোডটি প্রবেশ করুন।</p> 
                             </label>
@@ -40,8 +40,7 @@ function Confirmation () {
 
                     onSubmit={(values, actions) => { // so that we gan gain access to the submitted information and send it to the backend.
                         console.log(values);
-                        
-                        console.log(redirect)
+                        setShouldRedirect(true);
 
                         actions.setSubmitting(false);
                     }}

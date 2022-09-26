@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { recievedCodeSchema } from '../signup.schema'; // it was exported as object.
+// import { recievedCodeSchema } from '../signup.schema'; // it was exported as object.
 
-function Confirmation () {
-    const [shouldRedirect, setShouldRedirect] = useState(false);
+function GeneralMarriage () {
+    // const [shouldRedirect, setShouldRedirect] = useState(false);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
   
-    useEffect(() => {
-        if (shouldRedirect) {
-            navigate('/user/home');
-        }
-    });
+    // useEffect(() => {
+    //     if (shouldRedirect) {
+    //         navigate('/user/home');
+    //     }
+    // });
 
     return (
         <div className='row mt-4'>
@@ -36,11 +36,11 @@ function Confirmation () {
                         fieldFour: ""
                     }} 
 
-                    validationSchema={recievedCodeSchema}
+                    // validationSchema={recievedCodeSchema}
 
                     onSubmit={(values, actions) => { // so that we gan gain access to the submitted information and send it to the backend.
                         console.log(values);
-                        setShouldRedirect(true);
+                        // setShouldRedirect(true);
 
                         actions.setSubmitting(false);
                     }}
@@ -129,4 +129,4 @@ function Confirmation () {
     )
 }
 
-export default Confirmation;
+export default GeneralMarriage;

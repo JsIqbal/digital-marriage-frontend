@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link, redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { loginSchema } from '../signup.schema'; // it was exported as object.
+import { useState, useEffect } from 'react';
 
 function MoblieRegistration () {
-    // const shouldRedirect = true;
+    const [shouldRedirect, setShouldRedirect] = useState(false);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
   
-    // useEffect(() => {
-    //   if (shouldRedirect) {
-    //     navigate('/home');
-    //   }
-    // });
+    useEffect(() => {
+        if (shouldRedirect) {
+            navigate('/user/mobile/registration/welcome');
+        }
+    });
 
     return (
         <div className='row mt-4'>
@@ -37,8 +37,7 @@ function MoblieRegistration () {
 
                     onSubmit={(values, actions) => { // so that we gan gain access to the submitted information and send it to the backend.
                         console.log(values);
-                        
-                        console.log(redirect)
+                        setShouldRedirect(true);
 
                         actions.setSubmitting(false);
                     }}

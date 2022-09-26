@@ -35,3 +35,13 @@ h4 {
     width: 100%;
 }
 /* ----- */
+
+.react-button {
+    width: 100%;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    width: 100%;
+}
